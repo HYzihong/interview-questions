@@ -29,18 +29,12 @@ module.exports = {
 
   // scope 类型（定义之后，可通过上下键选择）
   scopes: [
-    ["components", "组件相关"],
-    ["hooks", "hook 相关"],
-    ["utils", "utils 相关"],
-    ["ui", "对 ui框架 的配置"],
-    ["views", "页面修改"],
-    ["routers", "路由修改"],
-    ["plugin", "插件修改"],
-    ["store", "仓库修改"],
-    ["config", "配置修改"],
-    ["styles", "样式相关"],
-    ["deps", "项目依赖"],
-    ["auth", "对 auth 修改"],
+    ["AlgorithmProblem", "算法题"],
+    ["Vue", "Vue相关"],
+    ["Javascript", "Javascript相关"],
+    ["CSS", "CSS相关"],
+    ["HTML", "HTML相关"],
+    ["DataStructure", "数据结构相关"],
     ["other", "其他修改"],
     // 如果选择 custom，后面会让你再输入一个自定义的 scope。也可以不设置此项，把后面的 allowCustomScopes 设置为 true
     ["custom", "自定义"],
