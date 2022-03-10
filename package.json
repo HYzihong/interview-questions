@@ -2,8 +2,10 @@
   "name": "interview-questions",
   "version": "1.0.0",
   "description": "我的前端面试题",
-  "main": "index.js",
   "scripts": {
+    "cz": "git-cz",
+    "commit": "git add . && git cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "test": "jest --no-cache"
   },
   "repository": {
@@ -17,12 +19,23 @@
     "url": "https://github.com/HYzihong/interview-questions/issues"
   },
   "homepage": "https://github.com/HYzihong/interview-questions#readme",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.21",
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0",
     "babel-jest": "^27.5.1",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.3",
