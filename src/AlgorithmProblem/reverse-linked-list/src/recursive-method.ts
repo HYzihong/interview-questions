@@ -7,7 +7,7 @@ type ListNodeType = {
  * @param {ListNodeType} head
  * @return {ListNodeType} newHead
  */
-function reverseListNode(head: ListNodeType | null): ListNodeType {
+function reverseListNode(head: ListNodeType | null): ListNodeType | null {
   // 判断节点是否为空或者是否只有头节点
   // if (head == null || head.next == null) {
   if (!head || !head.next) {

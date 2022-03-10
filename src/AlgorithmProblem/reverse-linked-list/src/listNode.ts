@@ -3,8 +3,8 @@
  * @Date: 2022-03-09 23:04:47
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-03-10 22:40:27
- * @FilePath: /interview-questions/src/algorithm-problem/reverse-linked-list/src/listNode.ts
+ * @LastEditTime: 2022-03-11 00:28:10
+ * @FilePath: /interview-questions/src/AlgorithmProblem/reverse-linked-list/src/listNode.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
  */
@@ -24,7 +24,7 @@ type ListNodeType = {
 export class ListNode {
   public val: number;
   public next: ListNodeType | null;
-  constructor(val: number, next?: ListNodeType | undefined) {
+  constructor(val: number, next?: ListNodeType | null) {
     this.val = val == undefined ? 0 : val;
     this.next = next == undefined ? null : next;
     // this.val = val;

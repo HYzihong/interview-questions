@@ -3,8 +3,8 @@
  * @Date: 2022-03-10 23:56:43
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-03-10 23:57:03
- * @FilePath: /interview-questions/src/algorithm-problem/reverse-linked-list/src/tail-recursion-method.ts
+ * @LastEditTime: 2022-03-11 00:26:56
+ * @FilePath: /interview-questions/src/AlgorithmProblem/reverse-linked-list/src/tail-recursion-method.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
  */
@@ -18,11 +18,14 @@ type ListNodeType = {
  * @param {ListNodeType} head
  * @return {ListNodeType} newHead
  */
-function reverseListNode(head: ListNodeType | null): ListNodeType {
+function reverseListNode(head: ListNodeType | null): ListNodeType | null {
   return _reverse(null, head);
 }
 
-function _reverse(prev: ListNodeType | null, curr: ListNodeType | null) {
+function _reverse(
+  prev: ListNodeType | null,
+  curr: ListNodeType | null
+): ListNodeType | null {
   if (!curr) return prev;
   let temp: ListNodeType | null = curr.next;
   curr.next = prev;
