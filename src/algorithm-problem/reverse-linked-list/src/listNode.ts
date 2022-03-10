@@ -3,7 +3,7 @@
  * @Date: 2022-03-09 23:04:47
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-03-10 00:22:11
+ * @LastEditTime: 2022-03-10 22:40:27
  * @FilePath: /interview-questions/src/algorithm-problem/reverse-linked-list/src/listNode.ts
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -11,27 +11,26 @@
 
 type ListNodeType = {
   val: number;
-  next: ListNodeType;
+  next: ListNodeType | null;
 };
 
-function ListNode(val: number, next?: ListNodeType) {
-  // @ts-ignore
-  this.val = val == undefined ? 0 : val;
-  // @ts-ignore
-  this.next = next == undefined ? null : next;
-}
-
-// TODO ts 报错 Expected 0 arguments, but got 1.  显示 constructor ListNode(): ListNode ，也就是 new 的时候不需要传参，但是我们要传入val
-// class ListNode {
-//   public val: number;
-//   public next: ListNodeType;
-//   construtor(val: number, next?: ListNodeType) {
-//     // this.val = val == undefined ? 0 : val;
-//     // this.next = next == undefined ? null : next;
-//     this.val = val;
-//     this.next = next;
-//   }
+// function ListNode(val: number, next?: ListNodeType) {
+//   // @ts-ignore
+//   this.val = val == undefined ? 0 : val;
+//   // @ts-ignore
+//   this.next = next == undefined ? null : next;
 // }
+
+export class ListNode {
+  public val: number;
+  public next: ListNodeType | null;
+  constructor(val: number, next?: ListNodeType | undefined) {
+    this.val = val == undefined ? 0 : val;
+    this.next = next == undefined ? null : next;
+    // this.val = val;
+    // this.next = next;
+  }
+}
 
 /**
  * 创建链表
@@ -47,7 +46,8 @@ function createList(arr: number[]): ListNodeType {
   return head;
 }
 
-// console.log(createList([1, 2, 3]));
+// console.log(createList([1, 2]));
+// console.log(createList([]));
 
 // let node: ListNodeType = { val: 1, next: { val: 2, next: null } };
 
