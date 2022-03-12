@@ -1,3 +1,13 @@
+/**
+ * @Author: hy
+ * @Date: 2022-03-11 00:00:53
+ * @LastEditors: hy
+ * @Description:
+ * @LastEditTime: 2022-03-12 23:30:58
+ * @FilePath: /interview-questions/.cz-config.js
+ * @Copyright 2022 hy, All Rights Reserved.
+ * @仅供学习使用~
+ **/
 "use strict";
 module.exports = {
   // type 类型（定义之后，可通过上下键选择）
@@ -29,6 +39,7 @@ module.exports = {
 
   // scope 类型（定义之后，可通过上下键选择）
   scopes: [
+    ["README", "README.md"],
     ["AlgorithmProblem", "算法题"],
     ["Vue", "Vue相关"],
     ["Javascript", "Javascript相关"],
