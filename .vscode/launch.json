@@ -5,22 +5,23 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "node",
       "name": "Jest",
+      "type": "node",
       "request": "launch",
-      "args": [
-        "${fileBasename}",
-        "--runInBand",
-        "--watchAll=false"
-      ],
-      "cwd": "${workspaceFolder}",
-      "console": "integratedTerminal",
-      // "internalConsoleOptions": "neverOpen",
-      "disableOptimisticBPs": true,
-      "sourceMaps": true,
       "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "stopOnEntry": false,
+      "args": ["${fileBasename}", "--runInBand", "--detectOpenHandles"],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": null,
+      "runtimeExecutable": null,
+      "runtimeArgs": ["--nolazy"],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "console": "integratedTerminal",
+      "sourceMaps": true,
       "windows": {
-        "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+        "program": "${workspaceFolder}/node_modules/jest/bin/jest",
       }
     }
   ]
