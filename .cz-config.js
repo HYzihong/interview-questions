@@ -3,7 +3,7 @@
  * @Date: 2022-03-11 00:00:53
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-03-12 23:30:58
+ * @LastEditTime: 2022-03-14 14:53:02
  * @FilePath: /interview-questions/.cz-config.js
  * @Copyright 2022 hy, All Rights Reserved.
  * @仅供学习使用~
@@ -39,13 +39,14 @@ module.exports = {
 
   // scope 类型（定义之后，可通过上下键选择）
   scopes: [
+    ["project", "project"],
     ["README", "README.md"],
-    ["AlgorithmProblem", "算法题"],
-    ["Vue", "Vue相关"],
-    ["Javascript", "Javascript相关"],
-    ["CSS", "CSS相关"],
-    ["HTML", "HTML相关"],
-    ["DataStructure", "数据结构相关"],
+    ["algorithm-problem", "算法题"],
+    ["vue", "Vue相关"],
+    ["javascript", "Javascript相关"],
+    ["css", "CSS相关"],
+    ["html", "HTML相关"],
+    ["data-structure", "数据结构相关"],
     ["other", "其他修改"],
     // 如果选择 custom，后面会让你再输入一个自定义的 scope。也可以不设置此项，把后面的 allowCustomScopes 设置为 true
     ["custom", "自定义"],
