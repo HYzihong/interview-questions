@@ -3,7 +3,7 @@
  * @Date: 2022-03-11 00:00:53
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-03-14 14:53:02
+ * @LastEditTime: 2022-03-14 14:56:24
  * @FilePath: /interview-questions/.cz-config.js
  * @Copyright 2022 hy, All Rights Reserved.
  * @仅供学习使用~
@@ -39,6 +39,7 @@ module.exports = {
 
   // scope 类型（定义之后，可通过上下键选择）
   scopes: [
+    ["pnpm-npm-yarn", "pnpm-npm-yarn"],
     ["project", "project"],
     ["README", "README.md"],
     ["algorithm-problem", "算法题"],
