@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "我的前端面试题",
   "scripts": {
+    "start:vue2": "pnpm -C ./packages/vue2-vue_config_js dev",
     "boostrap": "pnpm up",
     "cz": "git-cz",
     "commit": "git add . && git cz",
