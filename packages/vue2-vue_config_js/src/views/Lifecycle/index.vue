@@ -3,7 +3,7 @@
  * @Date: 2022-03-19 20:37:32
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-03-19 23:29:47
+ * @LastEditTime: 2022-03-20 00:17:05
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/views/Lifecycle/index.vue
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -125,7 +125,11 @@ export default {
     });
   },
   updated() {
-    // 这里不能执行this.data 会触发视图更新 造成死循环
+    // 文档: https://cn.vuejs.org/v2/api/#updated
+    // 在数据更改导致的虚拟 DOM 重新渲染和更新完毕之后被调用。
+    // 当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。
+    // 然而在大多数情况下，你应该避免在此期间更改状态。如果要相应状态改变，通常最好使用计算属性或 watcher 取而代之。
+    // 这里不能执行this.data导致触发的视图更新 造成死循环。
     this.logMessage("updated", () => {
       this.msg = "updated";
     });
