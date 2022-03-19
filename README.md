@@ -3,7 +3,7 @@
  * @Date: 2022-03-09 22:15:49
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-03-19 23:40:37
+ * @LastEditTime: 2022-03-19 23:53:59
  * @FilePath: /interview-questions/README.md
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -16,15 +16,16 @@
 #### [vue2](https://github.com/HYzihong/interview-questions/issues/12)
 
 - axios 封装
-- 组件通讯
-- pwa
-- [生命周期]()[#13](https://github.com/HYzihong/interview-questions/issues/13)
+- [组件通讯]() [`-`]
+- [pwa]() [`-`]
+- [生命周期](https://github.com/HYzihong/interview-questions/tree/master/packages/vue2-vue_config_js/src/views/Lifecycle) [[#13](https://github.com/HYzihong/interview-questions/issues/13)]✅
+
+- [nextTick](https://github.com/HYzihong/interview-questions/issues/2) [`-`]
 
 #### vue3
 
-
-- [nextTick](https://github.com/HYzihong/interview-questions/issues/2)
+...
 
 ## [Algorithm Problem](https://github.com/HYzihong/interview-questions/issues/4)
 
-- `reverse linked list ` [[link](https://github.com/HYzihong/interview-questions/issues/3) | [code](https://github.com/HYzihong/interview-questions/tree/master/src/AlgorithmProblem/reverse-linked-list)]✅
+- [reverse linked list ](https://github.com/HYzihong/interview-questions/tree/master/src/AlgorithmProblem/reverse-linked-list)[ [#3](https://github.com/HYzihong/interview-questions/issues/3)] ✅
