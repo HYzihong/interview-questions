@@ -3,7 +3,7 @@
  * @Date: 2022-03-17 23:38:20
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-03-17 23:38:20
+ * @LastEditTime: 2022-03-19 20:44:46
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/App.vue
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -12,11 +12,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>|
+      <!-- <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>| -->
       <router-link to="/component_communication"
-        >Component Communication</router-link
-      >
+        >Component Communication(组件通讯)</router-link
+      >|
+      <router-link to="/lifecycle">Lifecycle(生命周期)</router-link>
     </div>
     <router-view />
   </div>

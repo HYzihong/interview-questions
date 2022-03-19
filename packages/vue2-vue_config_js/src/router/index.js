@@ -3,7 +3,7 @@
  * @Date: 2022-03-17 23:37:30
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-03-17 23:37:32
+ * @LastEditTime: 2022-03-19 20:38:55
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/router/index.js
  * @Copyright 2022 hy, All Rights Reserved.
  * @仅供学习使用~
@@ -29,6 +29,14 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+  {
+    path: "/lifecycle",
+    name: "Lifecycle",
+    component: () =>
+      import(
+        /* webpackChunkName: "lifecycle" */ "../views/Lifecycle/index.vue"
+      ),
   },
   {
     path: "/component_communication",
