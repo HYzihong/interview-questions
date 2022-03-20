@@ -3,7 +3,7 @@
  * @Date: 2022-03-20 00:06:53
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-03-20 00:15:16
+ * @LastEditTime: 2022-03-20 17:03:46
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/views/Lifecycle/README.md
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -38,15 +38,28 @@ destoryed
 - child  updated
 - updated
 
---- 
 
 No component communication：
 - child  beforeUpdate
 - child  updated
+- child  beforeUpdate
+- child  updated
+...... 
 
----
 
-have component communication
+
+Have component communication
+
+-   beforeUpdate
+- child  beforeUpdate
+- child  updated
+-   updated
+
+-   beforeUpdate
+- child  beforeUpdate
+- child  updated
+-   updated
+...... 
 
 ## keep-alive：
 - [activated](https://cn.vuejs.org/v2/api/#activated)

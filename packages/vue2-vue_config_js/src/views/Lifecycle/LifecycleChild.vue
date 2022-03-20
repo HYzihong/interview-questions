@@ -3,7 +3,7 @@
  * @Date: 2022-03-19 22:31:24
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-03-19 23:18:05
+ * @LastEditTime: 2022-03-20 16:57:07
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/views/Lifecycle/LifecycleChild.vue
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -13,8 +13,8 @@
     <div>child</div>
     <div>child lifecycle : {{ message }}</div>
     <div>
-      {{ num }}
-      <button @click="num++">add</button>
+      {{ _num }}
+      <button @click="add">add</button>
     </div>
   </div>
 </template>
@@ -22,16 +22,22 @@
 <script>
 export default {
   components: {},
-  props: {},
+  props: {
+    num: Number,
+  },
   data() {
     return {
-      num: 0,
+      // num: 0,
       msg: "",
       message: "beforeCreate",
     };
   },
   watch: {},
-  computed: {},
+  computed: {
+    _num: function () {
+      return this.num;
+    },
+  },
   beforeCreate() {
     console.log("<------------");
     console.log(`--------- child beforeCreate ---------`);
@@ -93,6 +99,10 @@ export default {
     });
   },
   methods: {
+    add() {
+      let temp = this._num;
+      this.$emit("add", temp + 1);
+    },
     logMessage(msg, func) {
       console.log("<------------");
       console.log(`--------- child  ${msg} ---------`);

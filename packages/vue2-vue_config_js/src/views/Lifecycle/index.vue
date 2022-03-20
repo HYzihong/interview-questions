@@ -3,7 +3,7 @@
  * @Date: 2022-03-19 20:37:32
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-03-20 00:17:05
+ * @LastEditTime: 2022-03-20 16:57:59
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/views/Lifecycle/index.vue
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -12,7 +12,7 @@
   <div id="lifecycle">
     <div ref="ddd">ref ddd</div>
     <div>father lifecycle : {{ message }}</div>
-    <LifecycleChild />
+    <LifecycleChild :num="num" @add="add" />
   </div>
 </template>
 <script>
@@ -75,8 +75,9 @@ export default {
   props: {},
   data() {
     return {
+      num: 0, // child
       msg: "",
-      message: "",
+      message: "beforeCreate",
     };
   },
   watch: {},
@@ -148,6 +149,10 @@ export default {
     });
   },
   methods: {
+    add(e) {
+      console.log("add ==>", e);
+      this.num = e;
+    },
     logMessage(msg, func) {
       console.log("<------------");
       console.log(`--------- ${msg} ---------`);
