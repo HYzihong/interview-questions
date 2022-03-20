@@ -76,7 +76,6 @@
     "**/tmp": true,
     "**/yarn.lock": true
   },
-
   // Extension configs
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": false,
@@ -180,7 +179,6 @@
   "prettier.printWidth": 200,
   "prettier.semi": false,
   "prettier.singleQuote": true,
-
   // File Nesting
   // this might not be up to date with the repo, please check yourself
   // updated 2022-03-10 06:10

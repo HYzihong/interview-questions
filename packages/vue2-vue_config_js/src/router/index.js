@@ -3,7 +3,7 @@
  * @Date: 2022-03-17 23:37:30
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-03-19 20:38:55
+ * @LastEditTime: 2022-03-20 18:54:37
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/router/index.js
  * @Copyright 2022 hy, All Rights Reserved.
  * @仅供学习使用~
@@ -12,6 +12,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import routerGlobalGuards from "./utils/routerGlobalGuards";
 
 Vue.use(VueRouter);
 
@@ -53,5 +54,8 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
+
+// 全局路由守卫
+routerGlobalGuards(router);
 
 export default router;

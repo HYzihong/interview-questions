@@ -3,7 +3,7 @@
  * @Date: 2022-03-19 20:37:32
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-03-20 17:21:28
+ * @LastEditTime: 2022-03-20 18:02:08
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/views/Lifecycle/index.vue
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -23,16 +23,23 @@ import LifecycleChild from "./LifecycleChild.vue";
 export default {
   beforeRouteEnter(to, from, next) {
     console.log("---------- beforeRouteEnter ----------");
-    // console.log("--beforeRouteEnter--");
+    console.log("组件内的守卫 beforeRouteEnter ~");
     console.log("to ==>", to);
     console.log("from ==>", from);
     console.log("next ==>", next);
+    // TODO 为什么这里跟文档不一样 我们还是可以获取到this 实例。文档地址 https://v3.router.vuejs.org/zh/guide/advanced/navigation-guards.html#%E7%BB%84%E4%BB%B6%E5%86%85%E7%9A%84%E5%AE%88%E5%8D%AB
     next((_this) => {
       console.log("--------- next ---------");
       console.log("next this ==>", _this);
       // console.log("next this ==>", _this.msg);
       _this.logMessage("beforeRouteEnter", () => {
-        console.log("因为当钩子执行前，组件实例还没被创建");
+        console.log(
+          `
+          在渲染该组件的对应路由被 (window.confirm)confirm 前调用
+          文档中因为当钩子执行前，组件实例还没被创建。
+          但是会在child  beforeMount 和 child  mounted 之中执行，也会获取到this
+          `
+        );
       });
       console.log("--------- ./ next ---------------");
     });
@@ -49,7 +56,12 @@ export default {
       console.log("next this ==>", _this);
       // console.log("next this ==>", _this.msg);
       _this.logMessage("beforeRouteUpdate", () => {
-        console.log("因为当钩子执行前，组件实例还没被创建");
+        console.log(` 
+        在当前路由改变，但是该组件被复用时调用
+        举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，
+        由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
+        可以访问组件实例 this
+     `);
       });
       console.log("--------- ./ next ---------------");
     });
@@ -61,15 +73,31 @@ export default {
     console.log("to ==>", to);
     console.log("from ==>", from);
     console.log("next ==>", next);
-    next((_this) => {
-      console.log("--------- next ---------");
-      console.log("next this ==>", _this);
-      // console.log("next this ==>", _this.msg);
-      _this.logMessage("beforeRouteLeave", () => {
-        console.log("因为当钩子执行前，组件实例还没被创建");
-      });
-      console.log("--------- ./ next ---------------");
-    });
+    // next((_this) => {
+    //   console.log("--------- next ---------");
+    //   console.log("next this ==>", _this);
+    //   _this.logMessage("beforeRouteLeave", () => {
+    //     console.log(`
+    //     导航离开该组件的对应路由时调用
+    //     可以访问组件实例 this
+    //     `);
+    //   });
+    //   console.log("--------- ./ next ---------------");
+    // });
+    console.log(
+      `
+    导航离开该组件的对应路由时调用
+    可以访问组件实例 this
+      `
+    );
+    const answer = window.confirm(
+      "Do you really want to leave? you have unsaved changes!"
+    );
+    if (answer) {
+      next();
+    } else {
+      next(false);
+    }
     console.log("---------- ./ beforeRouteLeave ----------");
   },
   components: {
