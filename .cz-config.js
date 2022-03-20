@@ -3,7 +3,7 @@
  * @Date: 2022-03-11 00:00:53
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-03-14 14:56:24
+ * @LastEditTime: 2022-03-20 17:06:31
  * @FilePath: /interview-questions/.cz-config.js
  * @Copyright 2022 hy, All Rights Reserved.
  * @仅供学习使用~
@@ -43,7 +43,8 @@ module.exports = {
     ["project", "project"],
     ["README", "README.md"],
     ["algorithm-problem", "算法题"],
-    ["vue", "Vue相关"],
+    ["vue2", "Vue2相关"],
+    ["vue3", "Vue3相关"],
     ["javascript", "Javascript相关"],
     ["css", "CSS相关"],
     ["html", "HTML相关"],
