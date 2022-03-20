@@ -3,7 +3,7 @@
  * @Date: 2022-03-19 20:37:32
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-03-20 16:57:59
+ * @LastEditTime: 2022-03-20 17:21:28
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/views/Lifecycle/index.vue
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -12,7 +12,10 @@
   <div id="lifecycle">
     <div ref="ddd">ref ddd</div>
     <div>father lifecycle : {{ message }}</div>
-    <LifecycleChild :num="num" @add="add" />
+    <LifecycleChild v-if="isChild" :num="num" @add="add" />
+    <button @click="showChild">
+      {{ !isChild ? "show" : "disabled" }} child
+    </button>
   </div>
 </template>
 <script>
@@ -75,6 +78,7 @@ export default {
   props: {},
   data() {
     return {
+      isChild: true,
       num: 0, // child
       msg: "",
       message: "beforeCreate",
@@ -152,6 +156,9 @@ export default {
     add(e) {
       console.log("add ==>", e);
       this.num = e;
+    },
+    showChild() {
+      this.isChild = !this.isChild;
     },
     logMessage(msg, func) {
       console.log("<------------");

@@ -3,7 +3,7 @@
  * @Date: 2022-03-20 00:06:53
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-03-20 17:12:27
+ * @LastEditTime: 2022-03-20 17:24:38
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/views/Lifecycle/README.md
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -60,6 +60,13 @@
 - child  updated
 -   updated
 - ...... 
+
+#### destroy son component
+
+- beforeUpdate
+- child  beforeDestroy
+- child  destroyed
+- updated
 
 ## keep-alive：
 - [activated](https://cn.vuejs.org/v2/api/#activated)
