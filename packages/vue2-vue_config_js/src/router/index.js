@@ -3,7 +3,7 @@
  * @Date: 2022-03-17 23:37:30
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-03-20 18:54:37
+ * @LastEditTime: 2022-03-20 22:31:09
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/router/index.js
  * @Copyright 2022 hy, All Rights Reserved.
  * @仅供学习使用~
@@ -12,7 +12,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import routerGlobalGuards from "./utils/routerGlobalGuards";
+// import routerGlobalGuards from "./utils/routerGlobalGuards";
 
 Vue.use(VueRouter);
 
@@ -47,6 +47,12 @@ const routes = [
         /* webpackChunkName: "component_communication" */ "../views/ComponentCommunication/index.vue"
       ),
   },
+  {
+    path: "/computed",
+    name: "Computed",
+    component: () =>
+      import(/* webpackChunkName: "computed" */ "../views/Computed/index.vue"),
+  },
 ];
 
 const router = new VueRouter({
@@ -56,6 +62,6 @@ const router = new VueRouter({
 });
 
 // 全局路由守卫
-routerGlobalGuards(router);
+// routerGlobalGuards(router);
 
 export default router;
