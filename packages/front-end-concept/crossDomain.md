@@ -3,7 +3,7 @@
  * @Date: 2022-04-04 23:16:56
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-04-04 23:17:24
+ * @LastEditTime: 2022-04-05 15:36:52
  * @FilePath: /interview-questions/packages/front-end-concept/crossDomain.md
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -13,12 +13,12 @@
 
 ### 基本概念
 
-- 跨域：由于浏览器的同源策略，为了防范`跨站脚本的攻击`，禁止客户端脚本对不同域下的文档或脚本进行跨站调用资源。
+- 跨域：由于浏览器的`同源策略`，为了防范`跨站脚本的攻击`，禁止客户端脚本对不同域下的文档或脚本进行跨站调用资源。
 
 
 - 同源： protocol（协议）、domain（域名）、port（端口）三者同时一致时才是同源状态。
 
-同源是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSFR等攻击。
+> 同源是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSFR等攻击。
 
 - `https://www.HYzihong.com(:80)/index.html?key1=value1&key2=value2#基本概念`
   - https —— 协议(`protocol`)
@@ -44,15 +44,46 @@
 |https://`www.HYzihong.cn`|true|域名不一致|
 |https://`api.HYzihong.com`|true|域名不一致|
 |https://www.HYzihong.com`:8888`|true|端口不一致|
+|https://www.HYzihong.com`/a.html`|false|同源页面|
+|https://www.HYzihong.com`/a.js`|false|同源脚本|
 
 
+### 常见跨域解决方案
+
+#### 1. vue proxyTable or proxy
+
+vue 开发状态下`vue-cli` 提供的**跨域的代理中转服务器服务**, 是基于 `webpack` 的 [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) 插件实现的。
+
+```javascript
+
+// vue-cli2
+// webpack.config.js
+proxyTable: {
+  '/api': {
+     target: 'http://localhost:3000',
+  }
+},
+
+// vue-cli3
+// vue.config.js
+module.exports = {
+    devServer: {
+        port: 8000,
+        secure: true, // https
+        open: true,
+        overlay: {
+          warnings: false,
+          errors: true
+        }
+        // ...
+        proxy: {
+            "/api": {
+                target: "http://localhost:3000"
+             }
+        }
+    }
+};
 
 
-
-
-
-
-
-
-
+```
 
