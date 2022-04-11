@@ -3,7 +3,7 @@
  * @Date: 2022-03-17 23:37:30
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-03-20 22:31:09
+ * @LastEditTime: 2022-04-10 13:32:12
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/router/index.js
  * @Copyright 2022 hy, All Rights Reserved.
  * @仅供学习使用~
@@ -52,6 +52,12 @@ const routes = [
     name: "Computed",
     component: () =>
       import(/* webpackChunkName: "computed" */ "../views/Computed/index.vue"),
+  },
+  {
+    path: "/watch",
+    name: "Watch",
+    component: () =>
+      import(/* webpackChunkName: "watch" */ "../views/Watch/index.vue"),
   },
 ];
 

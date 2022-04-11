@@ -3,7 +3,7 @@
  * @Date: 2022-03-17 23:38:20
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-03-20 20:18:15
+ * @LastEditTime: 2022-04-10 13:32:22
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/App.vue
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -18,6 +18,7 @@
         Component Communication(组件通讯) </router-link
       >| <router-link to="/lifecycle">Lifecycle(生命周期)</router-link>|
       <router-link to="/computed">Computed(计算属性)</router-link>|
+      <router-link to="/watch">Watch(数据监听)</router-link>|
     </div>
     <router-view />
   </div>

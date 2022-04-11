@@ -3,7 +3,7 @@
  * @Date: 2022-03-14 14:17:55
  * @LastEditors: hy
  * @Description:
- * @LastEditTime: 2022-04-09 18:31:21
+ * @LastEditTime: 2022-04-11 19:00:31
  * @FilePath: /interview-questions/packages/vue2/README.md
  * Copyright 2022 hy, All Rights Reserved.
  * 仅供学习使用~
@@ -24,7 +24,7 @@
 
 ### vue如何检测数组变化
 
-> 嵌套数组深层响应式
+> 嵌套数组深层响应式的解决方案
 
 ### computed和watch的区别
 
@@ -36,6 +36,8 @@
 
 
 ### Vue采用异步渲染
+
+> 数据更新后视图未渲染的原因与解决方案
 
 
 ### nextTick
