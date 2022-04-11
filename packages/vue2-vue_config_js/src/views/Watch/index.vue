@@ -3,7 +3,7 @@
  * @Date: 2022-04-09 18:35:25
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-04-11 23:25:55
+ * @LastEditTime: 2022-04-11 23:46:05
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/views/Watch/index.vue
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -20,9 +20,6 @@
 </template>
 
 <script>
-// const wa = this.$watch("a", function (newVal, oldVal) {
-//   console.log("can close watch , a ==>", newVal, oldVal);
-// });
 export default {
   data() {
     return {
@@ -83,6 +80,7 @@ export default {
       handler: function (newVal, oldVal) {
         console.log("watch obj ==>", newVal.a, oldVal.a);
       },
+      // 在变更 (不是替换) 对象或数组时，旧值将与新值相同，因为它们的引用指向同一个对象/数组。Vue 不会保留变更之前值的副本。
       deep: true,
     },
     "obj.a": {
@@ -91,18 +89,32 @@ export default {
       },
       deep: true,
     },
-    // TODO 取消侦听
   },
   created() {
     // wa();
   },
-  mounted() {},
+  mounted() {
+    // 实现只监听一次的效果
+    // const unwatch = this.$watch("a", function (newValue, oldValue) {
+    //   console.log("mounted watch a ==>", newValue, oldValue);
+    //   unwatch();
+    // });
+    this.aWatch();
+  },
   methods: {
     aAdd() {
       this.a++;
     },
     aLog(val) {
       console.log("watch a  by a log==>", val);
+    },
+    aWatch() {
+      // vm.$watch 返回一个取消观察函数，用来停止触发回调：
+      const unwatch = this.$watch("a", function (newValue, oldValue) {
+        console.log("mounted watch a ==>", newValue, oldValue);
+        unwatch();
+        //  注意在带有 immediate 选项时，你不能在第一次回调时取消侦听给定的 property。
+      });
     },
     objAdd() {
       this.obj.a++;
