@@ -3,7 +3,7 @@
  * @Date: 2022-04-09 18:35:25
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-05-07 22:20:21
+ * @LastEditTime: 2022-05-07 23:37:50
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/views/Watch/index.vue
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -16,15 +16,22 @@
       obj:{{ obj }}<button @click="objAAdd">add a</button
       ><button @click="objBAdd">add b</button>
     </div>
+    <div>
+      children
+      <Item :item="item" />
+      <button @click="childrenAdd">child add</button>
+    </div>
   </div>
 </template>
 
 <script>
+import Item from "./item.vue";
 export default {
   data() {
     return {
       a: 1,
       obj: { a: 1, b: 1 },
+      item: 1,
     };
   },
   watch: {
@@ -48,14 +55,14 @@ export default {
     // },
     // 使用方法5： 从上到下，依次执行
     a: [
-      "aLog", // 1
+      "aLog",
       // 可以不不写函数名，这里只是为了规范化
       function handler(val) {
         // 2
         console.log("watch a 2 ==>", val);
       },
       {
-        handler: "aLog", // 3
+        handler: "aLog",
         immediate: true,
       },
       {
@@ -113,7 +120,7 @@ export default {
       const unwatch = this.$watch("a", function (newValue, oldValue) {
         console.log("mounted watch a ==>", newValue, oldValue);
         unwatch();
-        //  注意在带有 immediate 选项时，你不能在第一次回调时取消侦听给定的 property。
+        //  注意在带有 immediate 选项时，你不能在第一次回调时取消侦听给定的 property
       });
     },
     objAdd() {
@@ -128,6 +135,11 @@ export default {
     objLog(val) {
       console.log("watch obj by obj log==>", val);
     },
+    // child
+    childrenAdd() {
+      this.item++;
+    },
   },
+  components: { Item },
 };
 </script>
