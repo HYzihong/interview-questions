@@ -3,7 +3,7 @@
  * @Date: 2022-04-09 18:35:25
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-05-07 23:37:50
+ * @LastEditTime: 2022-05-08 00:20:00
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/views/Watch/index.vue
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -96,6 +96,22 @@ export default {
       },
       deep: true,
     },
+    $route: {
+      handler(to, from) {
+        console.log("route to ==>", to);
+        if (to.name === "Watch") console.log("router on watch .");
+        console.log("route from ==>", from);
+      },
+      immediate: true,
+    },
+    // vue router 实例
+    // $router: {
+    //   handler(to, from) {
+    //     console.log("router to ==>", to);
+    //     console.log("router from ==>", from);
+    //   },
+    //   immediate: true,
+    // },
   },
   created() {
     // wa();
