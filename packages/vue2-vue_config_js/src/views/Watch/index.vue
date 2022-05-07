@@ -3,7 +3,7 @@
  * @Date: 2022-04-09 18:35:25
  * @LastEditors: hy
  * @Description: 
- * @LastEditTime: 2022-04-11 23:46:05
+ * @LastEditTime: 2022-05-07 22:20:21
  * @FilePath: /interview-questions/packages/vue2-vue_config_js/src/views/Watch/index.vue
  * Copyright 2022 hy, All Rights Reserved. 
  * 仅供学习使用~
@@ -99,7 +99,7 @@ export default {
     //   console.log("mounted watch a ==>", newValue, oldValue);
     //   unwatch();
     // });
-    this.aWatch();
+    this.aOneOffWatch();
   },
   methods: {
     aAdd() {
@@ -108,7 +108,7 @@ export default {
     aLog(val) {
       console.log("watch a  by a log==>", val);
     },
-    aWatch() {
+    aOneOffWatch() {
       // vm.$watch 返回一个取消观察函数，用来停止触发回调：
       const unwatch = this.$watch("a", function (newValue, oldValue) {
         console.log("mounted watch a ==>", newValue, oldValue);
